@@ -1,27 +1,33 @@
-<jqa-plugin:jqassistant-plugin
-        xmlns:jqa-plugin="http://www.buschmais.com/jqassistant/core/plugin/schema/v1.1"
-        name="Jira">
-    <description>Provides a scanner for Jira.</description>
+<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v1.10"
+                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                    xsi:schemaLocation="http://schema.jqassistant.org/plugin/v1.10 https://schema.jqassistant.org/plugin/jqassistant-plugin-v1.10.xsd"
+                    name="jQAssistant Jira Plugin" id="jqa.plugin.jira">
+<description>Provides a scanner for Jira.</description>
     <model>
-        <class>org.jqassistant.contrib.plugin.jira.model.basic.Jira</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraServer</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.basic.JiraID</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.basic.JiraAuditInformation</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.basic.JiraDescription</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.basic.JiraName</class>
+        <class>org.jqassistant.plugin.jira.model.basic.Jira</class>
+        <class>org.jqassistant.plugin.jira.model.JiraServer</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraID</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraAuditInformation</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraDescription</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraName</class>
 
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraProject</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraIssue</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraUser</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraVersion</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraComponent</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraIssueType</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraPriority</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraStatus</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraComment</class>
-        <class>org.jqassistant.contrib.plugin.jira.model.JiraIssueLink</class>
+        <class>org.jqassistant.plugin.jira.model.JiraProject</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssue</class>
+        <class>org.jqassistant.plugin.jira.model.JiraUser</class>
+        <class>org.jqassistant.plugin.jira.model.JiraVersion</class>
+        <class>org.jqassistant.plugin.jira.model.JiraComponent</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssueType</class>
+        <class>org.jqassistant.plugin.jira.model.JiraPriority</class>
+        <class>org.jqassistant.plugin.jira.model.JiraStatus</class>
+        <class>org.jqassistant.plugin.jira.model.JiraComment</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssueLink</class>
+        <class>org.jqassistant.plugin.jira.model.JiraLabel</class>
     </model>
+    <scope>
+        <class>org.jqassistant.plugin.jira.scanner.JiraScope</class>
+    </scope>
     <scanner>
-        <class>org.jqassistant.contrib.plugin.jira.scanner.JiraScannerPlugin</class>
+        <class>org.jqassistant.plugin.jira.scanner.JiraScannerPlugin</class>
+        <class>org.jqassistant.plugin.jira.scanner.JiraServerScannerPlugin</class>
     </scanner>
-</jqa-plugin:jqassistant-plugin>
+</jqassistant-plugin>
