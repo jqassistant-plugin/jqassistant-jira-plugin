@@ -61,10 +61,6 @@
         </repository>
     </repositories>
 
-    <properties>
-        <jqassistant.plugin.common.version>2.0.0</jqassistant.plugin.common.version>
-    </properties>
-
     <dependencies>
         <dependency>
             <groupId>com.buschmais.jqassistant.core</groupId>

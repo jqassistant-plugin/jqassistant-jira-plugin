@@ -1,7 +1,7 @@
-<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v1.10"
-                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                    xsi:schemaLocation="http://schema.jqassistant.org/plugin/v1.10 https://schema.jqassistant.org/plugin/jqassistant-plugin-v1.10.xsd"
-                    name="jQAssistant Jira Plugin" id="jqa.plugin.jira">
+<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v2.2"
+                    id="jqa.plugin.jira"
+                    name="jQAssistant Jira Plugin"
+                    version="${project.version}">
     <description>Provides a scanner for Jira.</description>
     <model>
         <class>org.jqassistant.plugin.jira.model.basic.Jira</class>
