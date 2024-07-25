@@ -1,0 +1,33 @@
+<jqassistant-plugin xmlns="http://schema.jqassistant.org/plugin/v2.2"
+                    id="jqa.plugin.jira"
+                    name="jQAssistant Jira Plugin"
+                    version="${project.version}">
+    <description>Provides a scanner for Jira.</description>
+    <model>
+        <class>org.jqassistant.plugin.jira.model.basic.Jira</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraID</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraAuditInformation</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraDescription</class>
+        <class>org.jqassistant.plugin.jira.model.basic.JiraName</class>
+
+        <class>org.jqassistant.plugin.jira.model.JiraServer</class>
+        <class>org.jqassistant.plugin.jira.model.JiraProject</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssue</class>
+        <class>org.jqassistant.plugin.jira.model.JiraUser</class>
+        <class>org.jqassistant.plugin.jira.model.JiraVersion</class>
+        <class>org.jqassistant.plugin.jira.model.JiraComponent</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssueType</class>
+        <class>org.jqassistant.plugin.jira.model.JiraPriority</class>
+        <class>org.jqassistant.plugin.jira.model.JiraStatus</class>
+        <class>org.jqassistant.plugin.jira.model.JiraComment</class>
+        <class>org.jqassistant.plugin.jira.model.JiraIssueLink</class>
+        <class>org.jqassistant.plugin.jira.model.JiraLabel</class>
+    </model>
+    <scope>
+        <class>org.jqassistant.plugin.jira.scanner.JiraScope</class>
+    </scope>
+    <scanner>
+        <class>org.jqassistant.plugin.jira.scanner.JiraScannerPlugin</class>
+        <class>org.jqassistant.plugin.jira.scanner.JiraServerScannerPlugin</class>
+    </scanner>
+</jqassistant-plugin>

@@ -1,0 +1,17 @@
+# Java:
+target/
+dependency-reduced-pom.xml
+
+# JetBrains - IntelliJ:
+.idea/
+*.iml
+
+# jQAssistant execution:
+run.sh
+run/
+test-project/
+jqassistant/
+jira-docker-data/
+
+# Local debugging
+local-jira-user.md
