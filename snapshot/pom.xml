@@ -147,7 +147,7 @@
             <dependency>
                 <groupId>com.github.ben-manes.caffeine</groupId>
                 <artifactId>caffeine</artifactId>
-                <version>3.1.8</version>
+                <version>3.1.6</version>
                 <scope>provided</scope>
             </dependency>
             <!-- needed by Jira Rest Client -->
@@ -176,7 +176,7 @@
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
                 <artifactId>httpasyncclient-cache</artifactId>
-                <version>4.1.4</version>
+                <version>4.1.5</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.httpcomponents</groupId>
