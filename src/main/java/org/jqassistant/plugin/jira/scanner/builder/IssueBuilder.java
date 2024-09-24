@@ -75,6 +75,14 @@ public class IssueBuilder {
         LOGGER.info("Finished loading issues.");
     }
 
+    void resolveIssueLinks() {
+        this.issueLinkBuilder.handleIssueLinks();
+    }
+
+    void resolveSubtaskRelations() {
+        this.subtaskRelationBuilder.handleSubtaskRelations();
+    }
+
     private Map<String, String> extractCustomFields(Issue issue) {
         Map<String, String> customFields = new HashMap<>();
         for (IssueField field : issue.getFields()) {

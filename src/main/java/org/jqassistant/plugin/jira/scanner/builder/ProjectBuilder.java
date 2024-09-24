@@ -58,6 +58,11 @@ public class ProjectBuilder {
         }
 
         LOGGER.info("Imported {} Jira projects", jiraServer.getProjects().size());
+        LOGGER.info("Resolving Issue Links");
+        this.issueBuilder.resolveIssueLinks();
+
+        LOGGER.info("Resolving Subtask Relations");
+        this.issueBuilder.resolveSubtaskRelations();
     }
 
     private void resolveLeaderForProject(JiraProject jiraProject, BasicUser basicUser) {
