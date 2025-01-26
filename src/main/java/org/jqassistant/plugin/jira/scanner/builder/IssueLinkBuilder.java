@@ -21,11 +21,12 @@ public class IssueLinkBuilder {
         for (Map.Entry<Long, Iterable<IssueLink>> entry : this.issueLinkCache.entrySet()) {
             for (IssueLink issueLink : entry.getValue()) {
                 try {
-                    JiraIssueLink jiraIssueLink = this.cacheEndpoint.createIssueLink(issueLink);
-                    this.cacheEndpoint.findIssueOrThrowException(entry.getKey()).getIssueLinks().add(jiraIssueLink);
+                    JiraIssue sourceIssue = this.cacheEndpoint.findIssueOrThrowException(entry.getKey());
                     String targetIssueUri = issueLink.getTargetIssueUri().toString();
                     long targetIssueId = Long.parseLong(targetIssueUri.substring(targetIssueUri.lastIndexOf("/") + 1));
                     JiraIssue targetIssue = this.cacheEndpoint.findIssueOrThrowException(targetIssueId);
+                    JiraIssueLink jiraIssueLink = this.cacheEndpoint.createIssueLink(issueLink);
+                    sourceIssue.getIssueLinks().add(jiraIssueLink);
                     jiraIssueLink.setTargetIssue(targetIssue);
                 } catch (EntityNotFoundException e) {
                     LOGGER.warn(String.format("Creating a link between issues failed with message: '%s'. Here is the 'IssueLink' object: '%s'. This can happen as issue links can point at issues which have not been loaded, e.g. if they are in other projects.", issueLink.toString(), e.getMessage()));
