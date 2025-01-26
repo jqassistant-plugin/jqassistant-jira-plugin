@@ -1,5 +1,6 @@
 package org.jqassistant.plugin.jira.jjrc;
 
+import com.atlassian.jira.rest.client.api.AuthenticationHandler;
 import com.atlassian.jira.rest.client.api.JiraRestClient;
 import com.atlassian.jira.rest.client.api.domain.Component;
 import com.atlassian.jira.rest.client.api.domain.Priority;
@@ -28,10 +29,17 @@ public class DefaultJiraRestClientWrapper implements JiraRestClientWrapper {
     private static final Set<String> ALL_FIELDS = Collections.singleton("*all");
     private final JiraRestClient jiraRestClient;
 
-    public DefaultJiraRestClientWrapper(URI uri, String token) {
+    public DefaultJiraRestClientWrapper(URI uri, String token, String cookie) {
         AsynchronousJiraRestClientFactory clientFactory = new AsynchronousJiraRestClientFactory();
-        BearerHttpAuthenticationHandler bearerHttpAuthenticationHandler = new BearerHttpAuthenticationHandler(token);
-        this.jiraRestClient = clientFactory.createWithAuthenticationHandler(uri, bearerHttpAuthenticationHandler);
+        AuthenticationHandler authenticationHandler;
+        if (token != null) {
+            authenticationHandler = new BearerHttpAuthenticationHandler(token);
+        } else if (cookie != null) {
+            authenticationHandler = new SessionCookieAuthenticationHandler(cookie);
+        } else {
+            throw new IllegalArgumentException("Either token or cookie must be provided");
+        }
+        this.jiraRestClient = clientFactory.createWithAuthenticationHandler(uri, authenticationHandler);
     }
 
     public ServerInfo retrieveServerInfo() {

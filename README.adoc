@@ -19,17 +19,21 @@ jqassistant:
   scan:
     properties:
       jira.authentication.token: <bearer-token> <2>
-      jira.custom.issue.fields: <custom field name(s) <3>
-      jira.projects: <project-key(s)> <4>
+      jira.authentication.cookie: <session-cookie> <3>
+      jira.custom.issue.fields: <custom field name(s) <4>
+      jira.projects: <project-key(s)> <5>
 
   include:
     urls:
       - jira:server::<Jira server URL> <5>
 ----
 <1> Dependency to the Jira plugin
-<2> The bearer token for authentication
-<3> List of additional Issue fields to scan (comma-separated)
-<4> List of Projects to scan (comma-separated)
+<2> The bearer token for authentication.
+<3> The cookie in the form `JSESSIONID=...` for authentication
+<4> List of additional Issue fields to scan (comma-separated)
+<5> List of Projects to scan (comma-separated)
+
+NOTE: Either cookie or token must be provided for authentication.
 
 == Self-Signed Certificate
 
