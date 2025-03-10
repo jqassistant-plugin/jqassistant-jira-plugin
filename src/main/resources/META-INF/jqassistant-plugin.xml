@@ -2,7 +2,7 @@
                     id="jqa.plugin.jira"
                     name="jQAssistant Jira Plugin"
                     version="${project.version}">
-    <description>Provides a scanner for Jira.</description>
+    <description>${project.description}</description>
     <model>
         <class>org.jqassistant.plugin.jira.model.basic.Jira</class>
         <class>org.jqassistant.plugin.jira.model.basic.JiraID</class>
