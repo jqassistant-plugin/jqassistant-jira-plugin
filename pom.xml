@@ -13,7 +13,7 @@
 
     <name>jQAssistant Jira Plugin</name>
     <description>The jQAssistant plugin to scan and to analyze a Jira instance.</description>
-    <url>http://jqassistant.org/</url>
+    <url>https://github.com/jqassistant-plugin/jqassistant-jira-plugin</url>
 
     <developers>
         <developer>
